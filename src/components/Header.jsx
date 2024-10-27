@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className='sticky top-0 z-50 flex px-8 h-[var(--header-height)] bg-slate-900 items-center justify-between uppercase text-sm sm:text-lg'>
+    <div className='sticky top-0 z-50 flex px-8 h-[var(--header-height)] bg-slate-900/80 backdrop-blur items-center justify-between uppercase text-sm sm:text-lg'>
       <div className='flex gap-4 items-center'>
         <a href='/'>
           <img className='w-28 sm:w-32' src='/logo.svg' alt='logo' />
