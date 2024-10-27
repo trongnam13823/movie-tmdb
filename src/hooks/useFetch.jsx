@@ -13,7 +13,6 @@ export default function useFetch({
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
   const headerRef = useRef(headers)
-  console.log(process.env)
   useEffect(() => {
     let controller
     if (cancelPrevious) {
