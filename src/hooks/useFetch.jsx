@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useEffect, useRef, useState } from 'react'
 
 export default function useFetch({
@@ -12,7 +13,7 @@ export default function useFetch({
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
   const headerRef = useRef(headers)
-
+  console.log(process.env)
   useEffect(() => {
     let controller
     if (cancelPrevious) {
@@ -27,11 +28,11 @@ export default function useFetch({
         setError(null)
 
         try {
-          const response = await fetch(`${import.meta.env.VITE_API_HOST}${url}`, {
+          const response = await fetch(`${process.env.API_HOST}${url}`, {
             method,
             headers: {
               accept: 'application/json',
-              Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+              Authorization: `Bearer ${process.env.API_TOKEN}`,
               ...headerRef.current,
             },
             signal, // Truyền signal vào fetch nếu `cancelPrevious` là true
